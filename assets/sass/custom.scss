@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Bevan');
+@import "flex";
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace;
+}
+$red: #e07164;
+$orange: #f1650b;
+.font-red {
+  color: $red;
+}
+
+a {
+  border-bottom: 0;
+  &:hover {
+  }
+}
+
+#banner {
+  font-size: 7pt;
+
+  .inner {
+
+    .box {
+
+    }
+  }
+}
+
+header.major:after {
+  background-color: #888;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  margin: 2em auto 0;
+  position: relative;
+  width: 5em;
+  text-align: center;
+  @include flexbox;
+}
+
+.flex {
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+}
+
+#ctf {
+  .ctf-tweets {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(space-evenly);
+    .ctf-item {
+      width: 30%;
+      display: inline-block;
+      vertical-align: -webkit-baseline-middle;
+      border-top: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      text-align: center;
+      @include flex(0 1 16em);
+      margin: 1em;
+      .ctf-tweet-text {
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+#nav ul {
+  text-align: right;
+    li {
+    display: inline-block;
+//    font-variant: small-caps;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 2em;
+    a {
+      color: $orange;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+//  text-transform: uppercase;
+  font-family: 'Bevan', cursive;
+  font-weight: normal;
+  opacity: .7;
+  color: #333;
+
+}
+
+strong,
+small {
+  font-variant: small-caps;
+}
+small {
+  font-size: 80%;
+  font-weight: bold;
+}
+.gallery > ul > li {
+  display: inline-block;
+  > a > img {
+    border: 2px solid white;
+  }
+}
+.carousel {
+  font-size: 10pt;
+  .reel {
+    display: flex;
+    article {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 0 0 18em;
+      p {
+        line-height: 1.25em;
+        font-size: 9pt;
+      }
+    }
+  }
+}
+
+#main {
+  margin: auto;
+  width: 80%;
+}
+
+aside.widget-area {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include justify-content(space-evenly);
+  .footer-widget-1, .footer-widget-2 {
+    @include flex(1 1 20em);
+    width: 45%;
+    padding: 0 2%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .footer-widget-2 {
+    text-align: center;
+    p {
+      text-align: center;
+    }
+  }
+}
